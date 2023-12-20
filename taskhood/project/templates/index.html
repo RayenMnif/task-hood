@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    body{
+        color: aliceblue;
+        padding: 0;
+        margin: 0;
+        font-family: 'Fira Code', monospace;
+        background-color: black;
+        text-align: center;
+        font-size: larger;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        text-align: center;
+        display: flex;
+    }
+    li a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    li{
+        float: left;
+    }
+    #links{
+        color: grey;
+    }
+    #links:hover{
+        color: rgb(199, 199, 199);
+    }
+    #logout{
+        color: rgb(121, 86, 86);
+    }
+    #logout:hover{
+        color: rgb(192, 153, 153);
+    }
+    table{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        padding: 20px;
+        color: rgb(209, 209, 209);
+    }
+    input{
+        color:aliceblue;
+    }
+    table tr td input {
+        width: 100%;
+        
+    }
+    td, tr{
+        margin-top: 7px;
+        margin-bottom: 7px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    fieldset{
+        width: 80%;
+        margin: auto;
+    }
+    ::placeholder {
+        font-family: 'Fira Code', monospace;
+        opacity: 1; /* Firefox */
+    }
+
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+        font-family: 'Fira Code', monospace;
+    }
+    .task{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #text{
+        text-align: left;
+        max-width: 99%;
+        margin: 0 auto;
+        font-size: 20px;
+        border: 0.0001px solid black;
+        resize: vertical;
+    }
+    #textarea{
+        background-color: transparent;
+        color: aliceblue;
+        margin: 0;
+        padding: 5px;
+        border: 0.01px solid rgb(190, 190, 190);
+        max-width: 100%;
+        height: 100%;
+        white-space: pre-wrap;
+    }
+</style>
+<body>
+    <ul>
+        <li>
+            <a  style="margin-right: 40px; color: white;">&lt;/task-hood&gt; </a>
+        </li>
+        <li>
+            <a id="links" href="#"> &lt;home&gt;  </a>
+        </li>
+        <li>
+            <a id="links" href="#">&lt;board&gt; </a>
+        </li>
+        <li>
+            <a id="logout" href="{{url_for('logout')}}">&lt;logout&gt;</a>
+        </li>
+    </ul>
+    <section>
+    <p>hi again {{ session["user_name"] }}!</p>
+        <form action="/todo" method="post" autocomplete="off">
+            <fieldset>
+                <legend>to do</legend>
+                <table>
+                    <tr>
+                        <td colspan="2"><label for="#"><input  autofocus name="task" class="task" style="background: transparent; border: 0px; font-size: 20px; border: 0.01px solid rgb(190, 190, 190); padding-left: 10px;" placeholder="add a new task" type="text" ></td></label>
+                    </tr>
+                    <!-- jinja part -->
+                    {% for t in tasks %}
+                        <tr>
+                            <td><input style="text-align: left;" type="checkbox" onchange="this.form.submit()" name="check" value="{{ t.task }}" ></td>
+                            <td><label for="#"><p style="text-align: left;margin: 5px 5px 5px 10px;">{{ t.task }}</p></td></label>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </fieldset>
+            <br><br>
+            <fieldset style="padding: 20px;">
+                <legend>quick notes</legend>
+                <div  id="text">
+                    <p contenteditable="true" name="textarea" id="textarea" name="textarea" oninput="checkText()" onkeydown="handleTab(event)"></p>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+   </body>

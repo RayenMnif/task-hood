@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+<style>
+    body{
+        font-family: 'Fira Code', monospace;
+        background-color: black;
+        text-align: center
+    }
+    input, button{
+        padding: 6px;
+        font-size: 18px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: 0.01px solid rgb(190, 190, 190);
+        outline: none; /* Removing outline */
+        font-family: 'Fira Code', monospace;
+        color: rgb(233, 233, 233);
+        border-radius: 2px;
+    }
+
+    button :hover{
+        color: rgb(197, 197, 197);
+    }
+    h1{
+        margin: 20px;
+        font-size: 35px;
+        color: rgb(223, 223, 223);
+    }
+    div{
+        text-align: center;
+        margin: auto;
+        padding: 30px;
+    }
+    #message{
+        color: rgb(121, 86, 86);
+    }
+    #register{
+        color: rgb(168, 168, 168);
+        font-size: smaller;
+    }
+    #register:hover{
+        color: rgb(218, 218, 218);
+    }
+    fieldset{
+        padding: 30px;
+        width: 20%;
+        margin: auto;
+    }
+    ::placeholder {
+        font-family: 'Fira Code', monospace;
+        opacity: 1; /* Firefox */
+    }
+
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+        font-family: 'Fira Code', monospace;
+    }
+
+</style>
+</head>
+
+<body>
+<div>
+    <fieldset>
+        <legend><h1>&lt;/task-hood&gt;</h1></legend>
+            <form method="post" action="/register" autocomplete="off">
+                <input type="text" minlength="3" maxlength="50" autofocus required placeholder="name" name="usr_name">
+                <br><br>
+                <input  type="password" minlength="6" maxlength="12" required placeholder="password" name="usr_pswrd">
+                <p id="message">{{ message }}</p>
+                <button type="submit" >submit</button>
+                <br><br>
+                <a id="register"href="{{url_for('login')}}">Already have an acount? Log in</a>
+        </form>
+    </fieldset>
+</div>
+</body>
