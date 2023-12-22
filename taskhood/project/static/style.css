@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* index page */
+body{
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    background-color: black;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    text-align: center;
+    display: flex;
+}
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+li{
+    float: left;
+}
+#links{
+    color: grey;
+}
+#links:hover{
+    color: rgb(199, 199, 199);
+}
+#logout{
+    color: rgb(121, 86, 86);
+}
+#logout:hover{
+    color: rgb(192, 153, 153);
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: rgb(209, 209, 209);
+}
+input{
+    color:aliceblue;
+}
+table tr td input {
+    width: 100%;
+    
+}
+td, tr{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+fieldset{
+    width: 80%;
+    margin: auto;
+}
+::placeholder {
+    font-family: 'Fira Code', monospace;
+    opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+    font-family: 'Fira Code', monospace;
+}
+.task{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#text{
+    text-align: left;
+    max-width: 99%;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 0.0001px solid black;
+    resize: vertical;
+}
+#textarea{
+    background-color: transparent;
+    color: aliceblue;
+    margin: 0;
+    padding: 5px;
+    border: 0.01px solid rgb(190, 190, 190);
+    max-width: 100%;
+    height: 100%;
+    white-space: pre-wrap;
+}
+
+/* login and register */ 
+    ::placeholder {
+        font-family: 'Fira Code', monospace;
+        opacity: 1; /* Firefox */
+    }
+
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+        font-family: 'Fira Code', monospace;
+    }
+    body{
+        font-family: 'Fira Code', monospace;
+        background-color: black;
+        text-align: center
+    }
+    input, button{
+        padding: 6px;
+        font-size: 18px;
+        margin-right: 10px;
+        background-color: transparent;
+        border: 0.01px solid rgb(190, 190, 190);
+        outline: none; /* Removing outline */
+        font-family: 'Fira Code', monospace;
+        color: rgb(233, 233, 233);
+        border-radius: 2px;
+    }
+
+    button :hover{
+        color: rgb(197, 197, 197);
+    }
+    h1{
+        margin: 20px;
+        font-size: 35px;
+        color: rgb(223, 223, 223);
+    }
+    div{
+        text-align: center;
+        margin: auto;
+        padding: 30px;
+    }
+    #message{
+        color: rgb(121, 86, 86);
+    }
+    #register{
+        color: rgb(168, 168, 168);
+        font-size: smaller;
+    }
+    #register:hover{
+        color: rgb(218, 218, 218);
+    }
+    #fieldset{
+        padding: 30px;
+        width: 20%;
+        margin: auto;
+    }
