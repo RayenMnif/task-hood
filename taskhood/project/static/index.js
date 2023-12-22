@@ -9,7 +9,7 @@ function checkText() {
         let tag = tags[i];
         let varName = tag.substring(1) + '_r'
         if (txtArea.innerText.includes(tag)) {
-            txtArea.innerHTML = txtArea.innerText.replace(tag, eval(varName));
+            txtArea.innerHTML = txtArea.innerHTML.replace(tag, eval(varName));
         }
     }
 }

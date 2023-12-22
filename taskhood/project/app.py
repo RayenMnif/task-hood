@@ -78,3 +78,10 @@ def todo():
             db.execute("DELETE FROM tasks WHERE user = ? AND task = ?", session["user_name"], check)
         return redirect("/")
         
+@app.route("/board", methods=["GET", "POST"])
+def board():
+    if request.method == "GET":
+        if session.get("user_name"):
+            return render_template("board.html")
+        else:
+            redirect("/login")
