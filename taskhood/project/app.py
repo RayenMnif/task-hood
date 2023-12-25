@@ -2,7 +2,6 @@ from flask import redirect, Flask, render_template, request, session, url_for
 from cs50 import SQL
 from flask_session import Session
 from flask_bcrypt import Bcrypt
-from openai import OpenAI
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = True

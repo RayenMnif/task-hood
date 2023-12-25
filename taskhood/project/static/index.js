@@ -19,3 +19,34 @@ function handleTab(event) {
         document.execCommand('insertHTML', false, '&#009');
     }
 }
+
+// board (sticky notes part)
+const note_container = document.getElementById("app");
+const add_note_buttom = document.querySelector("add-note");
+
+function getNote(){
+    // using flask 
+}
+
+function saveNote(){
+    // using flask 
+}
+
+function createNote(id, content){
+    const element = document.createElement("textarea");
+    element.classList.add("node");
+    element.placeholder = "tap here...";
+
+    element.addEventListener("dblclick", () => {
+        const doDelete = confirm("are you sure you wish to delete this note")
+        if (doDelete){
+            deleteNote(id, content)
+        }
+    });
+
+    return element;
+}
+
+function addNote(){
+
+}
