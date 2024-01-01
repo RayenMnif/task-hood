@@ -7,6 +7,7 @@ function Tsave(){
 
 textarea.addEventListener("input", function(){
     Tsave();
+    checkText();
 })
 
 function Tload(){
