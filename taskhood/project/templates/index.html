@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+    {% block title %}
+        index 
+    {% endblock %}
+
+    {% block body %}
+        <p>hi again {{ session["user_name"] }}!</p>
+            <form action="/todo" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>to do</legend>
+                    <table>
+                        <tr>
+                            <td colspan="2"><label for="#"><input  autofocus name="task" class="task" style="background: transparent; border: 0px; font-size: 20px; border: 0.01px solid rgb(190, 190, 190); padding-left: 10px;" placeholder="add a new task" type="text" ></td></label>
+                        </tr>
+                        <!-- jinja part -->
+                        {% for t in tasks %}
+                            <tr>
+                                <td><input style="text-align: left;" type="checkbox" onchange="this.form.submit()" name="check" value="{{ t.task }}" ></td>
+                                <td><label for="#"><p style="text-align: left;margin: 5px 5px 5px 10px;">{{ t.task }}</p></td></label>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </fieldset>
+                <br><br>
+                <fieldset style="padding: 20px;">
+                    <legend>quick notes</legend>
+                    <div  id="text">
+                        <p contenteditable="true" name="textarea" id="textarea" name="textarea" onkeydown="handleTab(event)"></p>
+                    </div>
+                </fieldset>
+            </form>
+    {% endblock %}

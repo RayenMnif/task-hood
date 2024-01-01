@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="div">
+    <fieldset id="fieldset">
+        <legend><h1>&lt;/task-hood&gt;</h1></legend>
+            <form method="post" action="/register" autocomplete="off">
+                <input type="text" minlength="3" maxlength="50" autofocus required placeholder="name" name="usr_name">
+                <br><br>
+                <input  type="password" minlength="6" maxlength="12" required placeholder="password" name="usr_pswrd">
+                <p id="message">{{ message }}</p>
+                <button type="submit" >submit</button>
+                <br><br>
+                <a id="register"href="{{url_for('login')}}">Already have an acount? Log in</a>
+        </form>
+    </fieldset>
+</div>
+</body>
